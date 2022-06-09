@@ -47,6 +47,6 @@ func scan_clean():
     dir.list_dir_begin()
     var name = dir.get_next()
     while name != "":
-        if not dir.current_is_dir() and not name.get_basename() in available_files:
+        if not dir.current_is_dir() and not name.get_basename() in available_files and name != ".gdignore":
             clean_files.append(name)
         name = dir.get_next()
